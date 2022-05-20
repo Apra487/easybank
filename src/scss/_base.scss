@@ -1,0 +1,105 @@
+@import "variables";
+@import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background: $very-light-gray;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button.request-invite {
+  border: 0;
+  outline: 0;
+  font-family: $font-family;
+  color: $white;
+  border-radius: 3rem;
+  background: $button-bg;
+  transition: transform 0.4s;
+  font-size: 1.6rem;
+  padding: 1.2rem 2.5rem;
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    transform: scale(0.9);
+  }
+}
+
+svg {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+section {
+  padding: 5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $dark-blue;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.5;
+  color: $grayish-blue;
+
+  &.large {
+    font-size: 1.8rem;
+
+    @include responsive-size-down(tablet) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &.medium {
+    font-size: 1.6rem;
+
+    @include responsive-size-down(tablet) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &.small {
+    font-size: 1.4rem;
+  }
+
+  &.large &.medium {
+    @include responsive-size-down(mobile) {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 114rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.4s ease-in;
+
+  @include responsive-size-down(large) {
+    width: 90%;
+  }
+}

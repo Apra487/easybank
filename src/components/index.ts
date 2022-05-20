@@ -1,0 +1,5 @@
+export { default as Header } from "./Header"
+export { default as Intro } from "./Intro"
+export { default as Easybank } from "./Easybank"
+export { default as Articles } from "./Articles"
+export { default as Footer } from "./Footer"

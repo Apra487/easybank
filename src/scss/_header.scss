@@ -1,0 +1,223 @@
+@import "variables";
+
+.header {
+  padding: 1.5rem;
+  background: $white;
+  position: relative;
+  z-index: 10;
+
+  &__navbar {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    transition: all 0.4s ease-in;
+    background: $white;
+
+    @include responsive-size-down(desktop) {
+      gap: 1.5rem;
+    }
+
+    @include responsive-size-down(tablet) {
+      position: absolute;
+      width: 40%;
+      height: 22rem;
+      border-radius: 1.5rem;
+      top: 6rem;
+      right: 6%;
+      opacity: 0;
+      flex-direction: column;
+      padding: 2rem;
+      // display: none;
+
+      // &.show {
+      //   display: flex;
+      //   flex-direction: column;
+      //   padding: 2rem;
+      //   // animation: animation(fadeInMobileMenu);
+      // }
+
+      // animation: animation(fadeInMobileMenu);
+      &-enter {
+        opacity: 0;
+      }
+      &-enter-active {
+        opacity: 1;
+        transition: opacity 0.4s 0.4s;
+      }
+      &-enter-done {
+        opacity: 1;
+      }
+      &-exit {
+        opacity: 1;
+      }
+      &-exit-active {
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      &-exit-done {
+        display: none;
+      }
+    }
+
+    @include responsive-size-down(mobile) {
+      width: 80%;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &--item {
+      color: $grayish-blue;
+      font-size: 1.6rem;
+      height: 100%;
+      position: relative;
+      transition: color 0.4s;
+
+      @include responsive-size-down(tablet) {
+        align-self: center;
+        color: $dark-blue;
+        display: flex;
+        align-items: center;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $dark-blue;
+
+        &::after {
+          opacity: 1;
+          animation: animation(hoverIn);
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 2px;
+        width: 100%;
+        background: $button-bg;
+        height: 4px;
+        bottom: -26px;
+        left: 0;
+        border-radius: 10px;
+        animation: animation(hoverOut);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+    }
+  }
+
+  .request-invite {
+    @include responsive-size-down(tablet) {
+      display: none;
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    background: url("../images/icon-hamburger.svg");
+    width: 2.4rem;
+    height: 1.1rem;
+    transition: transform 1.4s ease-in;
+    transform: scale(0);
+
+    @include responsive-size-down(tablet) {
+      display: block;
+      transform: scale(1);
+    }
+  }
+
+  &__close {
+    display: none;
+    background: url("../images/icon-close.svg");
+    width: 1.8rem;
+    height: 1.9rem;
+
+    @include responsive-size-down(tablet) {
+      display: block;
+      //   transform: translate(1);
+    }
+  }
+
+  &__bg {
+    background: linear-gradient(
+      180deg,
+      rgba(45, 49, 77, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    // animation: animation(fadeInMobileBg);
+
+    &-enter {
+      opacity: 0;
+      height: 0;
+    }
+    &-enter-active,
+    &-enter-done,
+    &-exit {
+      opacity: 0.9;
+      height: calc(100vh - 5rem);
+    }
+    &-exit-active {
+      height: 0;
+      opacity: 0;
+    }
+
+    &-enter-active {
+      transition: opacity 0.4s, height 0.4s;
+    }
+
+    &-exit-active {
+      transition: opacity 0.4s 0.4s, height 0.4s 0.4s;
+    }
+
+    @include responsive-size-up(tablet) {
+      display: none;
+    }
+  }
+}
+
+@include keyframes(hoverOut) {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(100%);
+  }
+}
+
+@include keyframes(hoverOut) {
+  from {
+    transform: scale(100%);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+@include keyframes(fadeInMobileMenu) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeInMobileBg) {
+  0% {
+    opacity: 0;
+    height: 0px;
+  }
+
+  100% {
+    opacity: 0.9;
+    height: calc(100vh - 5rem);
+  }
+}

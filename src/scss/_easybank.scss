@@ -1,0 +1,97 @@
+@import "variables";
+
+.easybank {
+  background: $light-grayish-blue;
+
+  .container {
+    display: block;
+  }
+
+  &__headline {
+    font-size: 3.6rem;
+
+    @include responsive-size-down(tablet) {
+      font-size: 3rem;
+    }
+
+    @include responsive-size-down(mobile) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__paragraph {
+    margin: 2rem 0 3rem 0;
+  }
+
+  &__headline,
+  &__paragraph {
+    @include responsive-size-down(tablet) {
+      text-align: center;
+    }
+  }
+
+  &__features {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: space-between;
+
+    @include responsive-size-down(tablet) {
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 23%;
+
+      @include responsive-size-down(tablet) {
+        width: 48%;
+        &:first-child,
+        &:nth-child(2) {
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @include responsive-size-down(mobile) {
+        &:not(:last-child) {
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @include responsive-size-down(mobile) {
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      &--icon {
+        height: 7.2rem;
+        width: 7.2rem;
+        align-self: flex-start;
+
+        @include responsive-size-down(mobile) {
+          align-self: center;
+        }
+
+        &-0 {
+          background: url("../images/icon-online.svg");
+        }
+        &-1 {
+          background: url("../images/icon-budgeting.svg");
+        }
+        &-2 {
+          background: url("../images/icon-onboarding.svg");
+        }
+        &-3 {
+          background: url("../images/icon-api.svg");
+        }
+      }
+
+      &--name {
+        color: $dark-blue;
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

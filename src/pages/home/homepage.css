@@ -1,0 +1,6 @@
+.home {
+    display: grid;
+    justify-content: center;
+    min-height: 20vh;
+    transform: translateY(200%)
+}

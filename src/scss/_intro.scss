@@ -1,0 +1,110 @@
+.intro {
+  min-height: 54rem;
+  position: relative;
+  width: 100%;
+
+  @include responsive-size-down(mobile) {
+    padding-top: 0;
+  }
+
+  .container {
+    position: relative;
+
+    @include responsive-size-down(mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-right: 8rem;
+
+    @include responsive-size-down(tablet) {
+      padding-right: 4rem;
+      width: 60%;
+    }
+
+    @include responsive-size-down(mobile) {
+      width: 80%;
+      padding-top: 37rem;
+      padding-right: 0;
+
+      &--headline,
+      &--paragraph {
+        text-align: center;
+      }
+    }
+
+    &--headline {
+      font-weight: 700;
+      font-size: 5rem;
+
+      @include responsive-size-down(tablet) {
+        font-size: 4rem;
+      }
+
+      @include responsive-size-down(mobile) {
+        font-size: 3rem;
+      }
+    }
+
+    &--paragraph {
+      margin: 2rem 0 3rem 0;
+    }
+  }
+
+  &__bg-image {
+    width: 100%;
+    min-height: 74rem;
+    background: url("../images/bg-intro-desktop.svg") no-repeat;
+    position: absolute;
+    z-index: -10;
+    right: -50%;
+    top: -26rem;
+
+    @include responsive-size-down(mobile) {
+      background: url("../images/bg-intro-mobile.svg") no-repeat;
+      top: 0;
+      right: 50%;
+      min-height: 42.3rem;
+      min-width: 37.5rem;
+      width: auto;
+      transform: translateX(50%);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: -20rem;
+    top: -20rem;
+    max-width: 70rem;
+
+    @include responsive-size-down(desktop) {
+      width: 70%;
+      top: -10rem;
+    }
+
+    @include responsive-size-down(tablet) {
+      width: 75%;
+      top: -5rem;
+    }
+
+    @include responsive-size-down(mobile) {
+      width: 75%;
+      right: 50%;
+      transform: translateX(50%);
+      top: -11rem;
+      min-width: 38rem;
+    }
+  }
+
+  button {
+    align-self: flex-start;
+
+    @include responsive-size-down(mobile) {
+      align-self: center;
+    }
+  }
+}

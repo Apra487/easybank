@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-easybank-dev-163501-authRole",
+      "UnauthRoleArn": "arn:aws:iam::395188895925:role/amplify-easybank-dev-163501-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::395188895925:role/amplify-easybank-dev-163501-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-easybank-dev-163501-deployment",
+      "UnauthRoleName": "amplify-easybank-dev-163501-unauthRole",
+      "StackName": "amplify-easybank-dev-163501",
+      "StackId": "arn:aws:cloudformation:ap-south-1:395188895925:stack/amplify-easybank-dev-163501/b34866f0-d82c-11ec-b71d-0645c060f5f0",
+      "AmplifyAppId": "d2vuz8m2um8y1f"
+    },
+    "categories": {
+      "auth": {
+        "easybank512d5d8d": {}
+      }
+    }
+  }
+}

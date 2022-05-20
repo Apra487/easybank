@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "easybank512d5d8d": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

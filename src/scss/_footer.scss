@@ -1,0 +1,105 @@
+@import "variables";
+
+.footer {
+  background: $dark-blue;
+  padding: 3rem 0;
+
+  .container {
+    gap: 7rem;
+
+    @include responsive-size-down(desktop) {
+      gap: 4rem;
+    }
+
+    @include responsive-size-down(tablet) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &--section {
+    display: flex;
+    flex-direction: column;
+    height: 7.8rem;
+    justify-content: space-between;
+
+    @include responsive-size-down(tablet) {
+      height: auto;
+      gap: 2rem;
+    }
+
+    &__social {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      @each $name, $styles in $socialNetworks {
+        &--#{$name} {
+          width: nth($styles, 1);
+          height: nth($styles, 2);
+          mask: nth($styles, 3);
+          background-color: $white;
+
+          &:hover {
+            background-color: $lime-green;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &__navbar {
+      width: 26rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 5rem;
+      transition: gap 0.4s ease-in;
+
+      @include responsive-size-down(desktop) {
+        column-gap: 0;
+      }
+
+      @include responsive-size-down(tablet) {
+        flex-direction: column;
+      }
+
+      &--item {
+        color: $white;
+        font-size: 1.4rem;
+        width: 40%;
+
+        @include responsive-size-down(tablet) {
+          width: 100%;
+          text-align: center;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: $lime-green;
+        }
+      }
+    }
+
+    &__info {
+      color: $grayish-blue;
+      font-size: 1.4rem;
+      align-self: flex-end;
+    }
+
+    button {
+      align-self: flex-end;
+
+      @include responsive-size-down(tablet) {
+        align-self: center;
+      }
+    }
+
+    &:nth-child(2) {
+      flex-grow: 1;
+    }
+
+    &:last-child {
+      flex-grow: 2;
+    }
+  }
+}
