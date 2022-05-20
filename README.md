@@ -6,6 +6,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![](./src/images/screen.png)
 
+### Tech Stack used
+
+- React
+- Typescript
+- Amplify
+- Cognito
+
+
+### Please note that this web app was build as a prrof of concept and I spend only 1-1.5 hrs making it.
+
 ## Available Scripts
 
 In the project directory, you can run:
